@@ -40,20 +40,25 @@ class ProductController extends Controller
         //
         $validatedData = $request->validate([
             'name' => 'required',
-            'quantity' => 'required',
-            'buy_price' => 'required',
-            'sell_price' => 'required',
+            'tag' => 'required',
+            'count' => 'required',
+            'rating' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'title' => 'required',
         ]);
 
-        $product = new ProductModel();
+        $product = new Product();
         $product->name = $request->name;
-        $product->category_id = $request->cat;
-        $product->qty = $request->quantity;
-        $product->buy_price = $request->buy_price;
-        $product->sell_price = $request->sell_price;
+        $product->tag = $request->tag;
+        $product->count = $request->count;
+        $product->rating = $request->rating;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->title = $request->title;
         $product->save();
 
-        return redirect()->route('product.index');
+        return response()->json(['data' => $product], 200);
     }
 
     /**
@@ -75,9 +80,21 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request,  $id)
     {
         //
+        $product=Product::findOrFail($id);
+        $product->name = $request->name;
+        $product->tag = $request->tag;
+        $product->count = $request->count;
+        $product->rating = $request->rating;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->title = $request->title;
+        $product->save();
+
+        return response()->json(['data' => $product], 200);
+
     }
 
     /**
@@ -86,9 +103,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product=Product::findOrFail($id);
+        $product->delete();
+        return response()->json([], 200);
     }
 
     public function featured()

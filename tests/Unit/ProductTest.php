@@ -1,15 +1,13 @@
 <?php
+namespace Tests\Unit;
 
-namespace Tests\Feature\Http\Controllers;
-
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
-use App\Models\User;
 use App\Models\Product;
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 
-class ProductControllerTest extends TestCase
+class ProductTest extends TestCase
 {
     use WithFaker;
     use WithoutMiddleware; // use this trait
@@ -54,5 +52,4 @@ class ProductControllerTest extends TestCase
         $this->withoutExceptionHandling();
         $this->delete('/api/products/' . $product->id)->assertStatus(200);
     }
-
 }

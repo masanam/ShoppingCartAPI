@@ -1,4 +1,4 @@
-# Laravel Shopping Cart APi
+# Laravel Shopping Cart API
 
 ### Installation
 
@@ -14,5 +14,9 @@ $ php artisan db:seed
 ### Unit Testing
 
 ```sh
- vendor/bin/phpunit tests/Feature/Http/Controllers/ProductControllerTest.php
+$ php artisan make:test Http/Controllers/ProductControllerTest
+$ vendor/bin/phpunit tests/Unit/ProductTest.php
+$ php artisan test
  ```
+
+

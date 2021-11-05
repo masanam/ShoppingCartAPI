@@ -31,6 +31,10 @@ Route::name('products.')->prefix('products')->group(function() {
     Route::get('', [ProductController::class, 'index'])->name('index');
     Route::get('{id}', [ProductController::class, 'show'])->name('show');
     Route::get('/featured/index', [ProductController::class, 'featured'])->name('featured');
+    Route::post('', [ProductController::class, 'store'])->name('store');
+    Route::put('{id}', [ProductController::class, 'update'])->name('update');
+    Route::delete('/{id}', [ProductController::class, 'destroy'])->name('destroy');
+
 });
 
 Route::name('cart.')->prefix('cart')->group(function() {
