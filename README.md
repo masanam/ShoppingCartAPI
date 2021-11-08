@@ -20,4 +20,4 @@ $ php artisan test
  ```
 
 
-[![JavaScript_HTML_CSS_Python_NodeJS_GoLang_MySQL_PostgreSQL_MongoDB_Redis_AWS_ReactJS_Flask_Express_PHP](https://pimp-my-readme.webapp.io/pimp-my-readme/technology?technology=JavaScript_HTML_CSS_Python_NodeJS_GoLang_MySQL_PostgreSQL_MongoDB_Redis_AWS_ReactJS_Flask_Express_PHP)
+![JavaScript_HTML_CSS_Python_NodeJS_GoLang_MySQL_PostgreSQL_MongoDB_Redis_AWS_ReactJS_Flask_Express_PHP](https://pimp-my-readme.webapp.io/pimp-my-readme/technology?technology=JavaScript_HTML_CSS_Python_NodeJS_GoLang_MySQL_PostgreSQL_MongoDB_Redis_AWS_ReactJS_Flask_Express_PHP)
